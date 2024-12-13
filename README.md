@@ -1,6 +1,8 @@
 # ADM - Homework 5: USA Airport Flight Analysis, Group #5
 
 This GitHub repository contains the implementation of the fifth homework of the **Algorithmic Methods of Data Mining** course for the master's degree in Data Science at Sapienza (2024-2025). This homework was completed by Group #5. The details of the assignement are specified here:  https://github.com/Sapienza-University-Rome/ADM/tree/master/2024/Homework_5
+
+
 **Team Members:**
 * Valeria Avino, 1905974, avino.1905974@studenti.uniroma1.it
 *   2088928, vlasenko.2088928@studenti.uniroma1.it
@@ -54,35 +56,35 @@ Here are links to all the files:
   
 ---
 
-### **2. Nodes' Contribution **
+### **2. Nodes' Contribution**
 
 - **Steps:**  
   
 ---
 
-### **3. Finding Best Routes **
+### **3. Finding Best Routes**
 
 - **Steps:**  
  
 ---
 
-### **4. Airline Network Partitioning **
+### **4. Airline Network Partitioning**
 - **Steps:**  
 
 ---
 
-### **5. Finding and Extracting Communities **
+### **5. Finding and Extracting Communities**
 - **Steps:**  
 
 ---
 
-### **Bonus Question - Connected Components on MapReduce **
+### **Bonus Question - Connected Components on MapReduce**
 - **Steps:**  
 
 ---
 
 
-### **Algorithmic Question (AQ) **
+### **Algorithmic Question (AQ)**
 - **Steps:**  
 
 ---
