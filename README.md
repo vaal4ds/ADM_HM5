@@ -35,15 +35,6 @@ Here are links to all the files:
 ## Technologies Used
 
 ### Libraries and Frameworks:
-- **Apache Spark**: Used for distributed data processing and handling large-scale datasets efficiently.
-- **Numpy**: For efficient numerical computations and array manipulations.  
-- **Pandas**: For handling and preprocessing tabular data.  
-- **Scikit-learn**: For clustering algorithms and evaluation metrics.  
-- **Matplotlib**: For plotting and visualizing data.  
-- **Plotly**: For interactive display utilities, used in animations.
-- **nltk**: Used for text preprocessing.
-- **yellowbrick**: Used for determining the optimal number of clusters using the elbow method.
-- **gensim(Word2Vec)**: Used to represent text data as dense vector spaces for clustering or recommendations.  
 
 ---
 
