@@ -8,8 +8,7 @@ This GitHub repository contains the implementation of the fifth homework of the 
 *   2088928, vlasenko.2088928@studenti.uniroma1.it
 * ,evanthedor545@gmail.com
 
-The ```main.ipynb``` with the main script can be visualized in the jupyter notebook viewer: [nbviewer]()
-
+The ```main.ipynb``` with the main script can be visualized in the jupyter notebook viewer: 
 ## Repository Structure
 
 ```
