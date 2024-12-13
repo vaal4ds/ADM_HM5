@@ -24,11 +24,10 @@ The ```main.ipynb``` with the main script can be visualized in the jupyter noteb
 ```
 
 Here are links to all the files:
-- [main.ipynb](main.ipynb): The main notebook containing implementation and results
-- [functions](functions): Contains modularized scripts for the homework
-* [.gitignore](.gitignore): File to specify files and directories ignored by Git
-* [README.md](README.md): Project documentation
-* LICENSE: License file for the project
+* [main.ipynb](https://github.com/vaal4ds/ADM_HM5/blob/main/main.ipynb): The main notebook containing implementation and results
+* [functions](): Contains modularized scripts for the homework
+* [README.md](https://github.com/vaal4ds/ADM_HM5/blob/main/README.md): Project documentation
+* [LICENSE](https://github.com/vaal4ds/ADM_HM5/blob/main/LICENSE): License file for the project
 
 ---
 
