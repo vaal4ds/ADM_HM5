@@ -34,6 +34,12 @@ Here are links to all the files:
 ## Technologies Used
 
 ### Libraries and Frameworks:
+* pandas
+* matplotlib
+* numpy
+* seaborn
+* networkx
+* folium
 
 ---
 
