@@ -5,8 +5,8 @@ This GitHub repository contains the implementation of the fifth homework of the 
 
 **Team Members:**
 * Valeria Avino, 1905974, avino.1905974@studenti.uniroma1.it
-*   2088928, vlasenko.2088928@studenti.uniroma1.it
-* ,evanthedor545@gmail.com
+* Viktoriia Vlasenko, 2088928, vlasenko.2088928@studenti.uniroma1.it
+* Evan Theodar, 2186832, evanthedor545@gmail.com
 
 The ```main.ipynb``` with the main script can be visualized in the jupyter notebook viewer: 
 ## Repository Structure
@@ -34,6 +34,12 @@ Here are links to all the files:
 ## Technologies Used
 
 ### Libraries and Frameworks:
+* pandas
+* matplotlib
+* numpy
+* seaborn
+* networkx
+* folium
 
 ---
 
