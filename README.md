@@ -13,10 +13,22 @@ The ```main.ipynb``` with the main script can be visualized in the jupyter noteb
 
 ```
 ├── functions/                                      # Directory containing core project modules
-│   ├── 
-│   ├── 
-│   ├── 
-│   └──
+│   ├── flight_net_analysis.py/                     # Py file containing graph-related functions for Q1 and Q2
+|   |   ├── create_graph
+│   |   ├── analyze_graph_features
+│   |   ├── summarize_graph_features
+|   |   ├── dijkstra
+|   |   ├── reconstruct_path
+|   |   ├── calculate_betweenness
+|   |   ├── pagerank
+|   |   ├── analyze_centrality
+|   |   └── compare_centralities
+│   ├── netmap.py\                                 # Py file containing graph visualization function
+│   |   └── visualize                              
+│   └── traffic.py\                                # Py file containing traffic related computations for Q1 and Q2
+|       ├── passengers_flow
+|       ├── buisiest_routes
+|       └── routes_efficiency
 ├── main.ipynb                                      # Main notebook containg all the runned cells
 ├── .gitignore                                      # File to specify files and directories ignored by Git
 ├── README.md                                       # Project documentation
@@ -34,12 +46,12 @@ Here are links to all the files:
 ## Technologies Used
 
 ### Libraries and Frameworks:
-* pandas
-* matplotlib
-* numpy
-* seaborn
-* networkx
-* folium
+* pandas - *Data storage and manipulation*
+* matplotlib - *Visualizing distributions*
+* numpy - *Efficient numerical calculations*
+* seaborn - *Enhancing visualization aesthetics*
+* networkx - *Graph creation and handeling only*
+* folium - *Geographical visualization of the network on interactive maps*
 
 ---
 
