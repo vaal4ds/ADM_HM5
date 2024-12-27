@@ -252,8 +252,11 @@ def pagerank(graph, airport, weight='distance'):
 
 
 def analyze_centrality(flight_network, airport):
+
     V = list(flight_network.nodes())
     N = len(V)
+    features = analyze_graph_features(flight_network)
+    degrees = features['degrees']
 
     # Compute all shortest paths from the airport to all other nodes
     distances, predecessors = dijkstra(flight_network, airport)
@@ -268,9 +271,8 @@ def analyze_centrality(flight_network, airport):
     else:
         closeness_centrality = 0  
 
-    # Degree Centrality (Direct calculation from the graph)
-    degree = dict(flight_network.degree())
-    degree_centrality = degree.get(airport, 0) / (N - 1)  # Correcting to use degree[airport]
+    # Degree Centrality 
+    degree_centrality = degrees[airport] / (N - 1)  
 
     # PageRank
     airport_pagerank = pagerank(flight_network, airport, weight='distance')
@@ -300,7 +302,7 @@ def compare_centralities(flight_network):
     PR = {v: centralities[v]['PageRank'] for v in flight_network.nodes()}
 
     # Plotting histograms
-    fig, axes = plt.subplots(2, 2, figsize=(8, 4))
+    fig, axes = plt.subplots(2, 2, figsize=(12, 6))
     centrality_data = [
         (BC, 'Betweenness', 'magenta'),
         (CC, 'Closeness', 'blue'),
@@ -309,9 +311,10 @@ def compare_centralities(flight_network):
     ]
     
     for ax, (data, title, color) in zip(axes.flatten(), centrality_data):
+
         ax.hist(list(data.values()), bins=25, alpha=0.5, label=title, color=color)
-        ax.set_title(f'{title} Centralities')
-        ax.set_xlabel('Airports')
+        ax.set_title(f'{title} Centrality')
+        ax.set_xlabel('Centrality')
         ax.set_ylabel('Frequency')
 
     plt.tight_layout()
@@ -322,21 +325,81 @@ def compare_centralities(flight_network):
     top_5_DC = sorted(DC.items(), key=lambda item: item[1], reverse=True)[:5]
     top_5_PR = sorted(PR.items(), key=lambda item: item[1], reverse=True)[:5]
 
-    print(f"Top 5 Airports by Betweenness Centralities: {top_5_BC}\n"
-          f"Top 5 Airports by Closeness Centralities: {top_5_CC}\n"
-          f"Top 5 Airports by Degree Centralities: {top_5_DC}\n"
-          f"Top 5 Airports by PageRank: {top_5_PR}"
-        )
+    # Create a DataFrame for the top 5 results
+    results_table = pd.DataFrame({
+        'Betweenness': [f"{airport} ({score:.5f})" for airport, score in top_5_BC],
+        'Closeness': [f"{airport} ({score:.5f})" for airport, score in top_5_CC],
+        'Degree': [f"{airport} ({score:.5f})" for airport, score in top_5_DC],
+        'PageRank': [f"{airport} ({score:.5f})" for airport, score in top_5_PR]
+    })
+
+    # Display the table
+    print("\nTop 5 Airports for Each Centrality Measure:")
+    print(results_table)
+
+    return results_table
 
 
 
+def adj_matrix(graph):
 
-
-
-
+    '''
+    Builds  adjacency matrix from a directed graph
+    '''
+    nodes = list(graph.nodes)
+    node_idx = {node: idx for idx, node in enumerate(nodes)}
+    n = len(nodes)
+    #initialize matrix with zeros
+    adj_matrix = np.zeros((n, n))
+    #add ones only if there is an edge 
+    for node in graph:
+        for neighbor in graph[node]:
+            adj_matrix[node_idx[node], node_idx[neighbor]] = 1
     
+    return adj_matrix, node_idx
 
 
+def eigenvector_centrality(adj_matrix, max_iter=100, tol=1e-6):
+    '''
+    Computes eigenvector centrality for a graph represented by an adjacency matrix.
 
+    Parameters:
+        adj_matrix (np.ndarray): The adjacency matrix of the graph.
+        max_iter (int): Maximum number of iterations for convergence.
+        tol (float): Convergence tolerance.
 
+    Returns:
+        np.ndarray: Eigenvector centrality scores for each node.
+    '''    
+    # Number of nodes
+    n = adj_matrix.shape[0]
+    
+    # Initialize centrality vector
+    x = np.ones(n)
+    
+    # Iteratively compute centrality
+    for _ in range(max_iter):
+        # Multiply adjacency matrix with centrality vector x_new= Ax
+        x_new = np.dot(adj_matrix, x)
+        
+        # Normalize 
+        x_new = x_new / np.linalg.norm(x_new, ord=2)
+        
+        # repeat until convergence
+        if np.linalg.norm(x_new - x, ord=1) < tol:
+            break
+        
+        x = x_new
+        
+    #  visualizing results
+    plt.figure(figsize=(8, 6))
+    plt.hist(x, bins=25, alpha=0.5, color='magenta')
+    plt.title('Eigenvector Centrality')
+    plt.xlabel('Centrality')
+    plt.ylabel('Frequency')
+    plt.grid(axis='y', linestyle='--', alpha=0.7)
+    plt.tight_layout()
+    plt.show()
+
+    return x
 
