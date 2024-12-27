@@ -22,7 +22,9 @@ The ```main.ipynb``` with the main script can be visualized in the jupyter noteb
 |   |   ├── calculate_betweenness
 |   |   ├── pagerank
 |   |   ├── analyze_centrality
-|   |   └── compare_centralities
+|   |   ├── compare_centralities
+|   |   ├── adj_matrix
+|   |   └── eigenvector_centrality
 │   ├── netmap.py\                                 # Py file containing graph visualization function
 │   |   └── visualize                              
 │   └── traffic.py\                                # Py file containing traffic related computations for Q1 and Q2
