@@ -2,6 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
 import seaborn as sns
+from IPython.display import display
 
 def passengers_flow(data):
 
@@ -81,8 +82,8 @@ def routes_efficiency(data: pd.DataFrame , k: int):
     top_k = data[['route','Average_passengers'] ].sort_values(by = 'Average_passengers', ascending=False).head()
 
     # prints the top `k` routes by passengers efficiency
-    print(f"Top {k} routes by passenger efficiency :\n"
-          f"{top_k}")
+    print(f"Top {k} routes by passenger efficiency :\n")
+    display(top_k)
 
     # barchart of top_k most efficient routes 
     plt.figure(figsize=(10, 6))
@@ -112,7 +113,7 @@ def routes_efficiency(data: pd.DataFrame , k: int):
     .head(k)
 
     # Print the top `k` over-utilized and under-utilized tables
-    print(f"Top {k} over-utilized routes:\n"
-          f"{over_utilized}")
-    print(f"Top {k} under-utilized routes:\n"
-          f"{under_utilized}")
+    print(f"Top {k} over-utilized routes:\n")
+    display(over_utilized)
+    print(f"Top {k} under-utilized routes:\n")
+    display(under_utilized)

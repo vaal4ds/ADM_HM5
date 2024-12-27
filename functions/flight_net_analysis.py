@@ -3,6 +3,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
 import heapq
+from IPython.display import display
 
 
 def create_graph(data): 
@@ -68,7 +69,7 @@ def analyze_graph_features(flight_network):
     # Count the number of edges in the graph
     E = len(flight_network.edges())
     # Compute the density for directed graph with loops
-    density = E/(N**2)
+    density = 2*E/(N*(N-1))
     # Determine if the graph is sparse or dense based on its density.
     tresh1 = 0.15
     tresh2 = 0.5
@@ -80,7 +81,7 @@ def analyze_graph_features(flight_network):
         density_type = 'dense'
 
     else:
-        density_type = 'moderate'
+        density_type = 'moderatly dense'
 
     # Compute in-degree, out-degree and degree for each node iterating on edges
     in_degrees = {v: 0 for v in flight_network.nodes() }
@@ -117,11 +118,12 @@ def summarize_graph_features(flight_network):
     ''' generates a detailed report of the graph's features'''
 
     features = analyze_graph_features(flight_network)
-
-    print(f"Number of nodes N = {features['N']}")
-    print(f"Number of edges E = {features['E']}")
-    print(f"Density D = {features['density']}")
-    print(f"The graph is {features['density_type']} (Density = {features['density']})")
+    print("Summary Report:\n"
+          f"Number of nodes N = {features['N']}\n"
+          f"Number of edges E = {features['E']}\n"
+          f"Density D = {features['density']}\n"
+          f"The graph is {features['density_type']}"
+          )
 
     # histogram of in-degree distribution
     fig, axes = plt.subplots(1, 2, figsize=(10, 5))
@@ -139,9 +141,8 @@ def summarize_graph_features(flight_network):
     plt.show()
 
     # Display hubs (airports with degree higher than 90th percentile)
-    print("\nHubs (airports with degree > 90th percentile):")
-    print(features['hubs_df'])
-
+    print(f"Hubs (airports with degree > 90th percentile):\n")
+    display(features['hubs_df'])
 
 
 def dijkstra(graph, source):
@@ -335,7 +336,6 @@ def compare_centralities(flight_network):
 
     # Display the table
     print("\nTop 5 Airports for Each Centrality Measure:")
-    print(results_table)
 
     return results_table
 
