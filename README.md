@@ -86,7 +86,6 @@ Finally, Eigenvector Centrality Measure is implemented, and the results are comp
 
 ### **3. Finding Best Routes**
 
-Analyzing the flight network to detect communities using the **Louvain method**, and visualizing the largest one. Building a graph from flight data, running the community detection algorithm, and checking if two cities belong to the same community. The results include the total number of communities, a community overview, and a graph visualization. Lastly an alternative suggested by an LLM tool is implemented: the **Girvan-Newman method** and compared to the former.
  
 ---
 
@@ -96,7 +95,8 @@ Analyzing the flight network to detect communities using the **Louvain method**,
 ---
 
 ### **5. Finding and Extracting Communities**
-- **Steps:**  
+
+Analyzing the flight network to detect communities using the **Louvain method**, and visualizing the largest one. Building a graph from flight data, running the community detection algorithm, and checking if two cities belong to the same community. The results include the total number of communities, a community overview, and a graph visualization. Lastly an alternative suggested by an LLM tool is implemented: the **Girvan-Newman method** and compared to the former.  
 
 ---
 
@@ -107,7 +107,10 @@ Analyzing the flight network to detect communities using the **Louvain method**,
 
 
 ### **Algorithmic Question (AQ)**
-- **Steps:**  
+Implementation of an algorith to find the cheapest route from a starting city to a destination city with at most `k` stops, leveraging a priority queue to explore paths in increasing cost order. The graph is represented as an adjacency list where each city is connected by a flight with a specific cost. A priority queue stores routes with the current cost, city, and the number of stops made so far. The algorithm iterates through the queue, expanding cities while checking whether the destination is reached or if the number of stops exceeds the allowed limit. If a route is valid, the algorithm updates the visited states and pushes new paths into the queue. The algorithm terminates when the destination is found or no valid route exists.
+
+The time complexity is **O((k + 1) * E * log E)**, where `E` is the number of edges (flights), and `k` is the number of allowed stops. Space complexity is **O(E + n * (k + 1))**, where `n` is the number of cities. For large graphs, this approach can become inefficient, especially if `k` is large. Optimizations like pruning and dynamic programming can help reduce redundant calculations and memory usage.
+
 
 ---
 
