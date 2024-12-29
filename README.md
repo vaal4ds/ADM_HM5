@@ -56,6 +56,8 @@ Here are links to all the files:
 * seaborn - *Enhancing visualization aesthetics*
 * networkx - *Graph creation and handeling only*
 * folium - *Geographical visualization of the network on interactive maps*
+* PySpark - *Distributed data processing and big data analytics*
+* Community (community_louvain) - *Community detection in networks*
 
 ---
 
