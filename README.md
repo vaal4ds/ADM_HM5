@@ -10,7 +10,7 @@ This GitHub repository contains the implementation of the fifth homework of the 
 * Viktoriia Vlasenko, 2088928, vlasenko.2088928@studenti.uniroma1.it
 * Evan Theodar, 2186832, evanthedor545@gmail.com
 
-The ```main.ipynb``` with the main script can be visualized in the [jupyter notebook viewer](https://github.com/vaal4ds/ADM_HM5/blob/main/main.ipynb)
+The ```main.ipynb``` with the main script can be visualized in the [jupyter notebook viewer](https://nbviewer.org/github/vaal4ds/ADM_HM5/blob/main/main.ipynb)
 ## Repository Structure
 
 ```
