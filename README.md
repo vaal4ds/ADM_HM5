@@ -86,7 +86,7 @@ Finally, Eigenvector Centrality Measure is implemented, and the results are comp
 
 ### **3. Finding Best Routes**
 
-- **Steps:**  
+Analyzing the flight network to detect communities using the **Louvain method**, and visualizing the largest one. Building a graph from flight data, running the community detection algorithm, and checking if two cities belong to the same community. The results include the total number of communities, a community overview, and a graph visualization. Lastly an alternative suggested by an LLM tool is implemented: the **Girvan-Newman method** and compared to the former.
  
 ---
 
@@ -101,7 +101,7 @@ Finally, Eigenvector Centrality Measure is implemented, and the results are comp
 ---
 
 ### **Bonus Question - Connected Components on MapReduce**
-- **Steps:**  
+  
 
 ---
 
