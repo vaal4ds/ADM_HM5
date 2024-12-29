@@ -87,12 +87,22 @@ Finally, Eigenvector Centrality Measure is implemented, and the results are comp
 ---
 
 ### **3. Finding Best Routes**
+To determine the best possible route between an origin and destination city, the **Dijkstra Algorithm** was implemented. 
 
+This algorithm is particularly suited for scenarios with multiple routes between cities due to the presence of multiple airports. The flight network was first filtered by the specified date to ensure only relevant connections were considered. 
+
+As a result, the solution provides the optimal route between airport combinations, ensuring accuracy and efficiency.
  
 ---
 
 ### **4. Airline Network Partitioning**
-- **Steps:**  
+This task focused on partitioning the flight network into two subgraphs using the Minimum Cut Algorithm, based on the principles of the Max-Flow Min-Cut Theorem. The objective was to identify and remove the minimum total weight of edges (representing the number of flights) to split the network.
+
+To define the resulting subgraphs, Kosaraju's Algorithm was employed to compute Strongly Connected Components (SCCs), ensuring meaningful partitioning based on mutual reachability.
+
+The results reveal that the network's structure is inherently unsuitable for a balanced division. One subgraph would encompass nearly the entire flight network, controlled by one entity, while the other subgraph would consist of only a negligible fraction of nodes.
+
+This significant imbalance highlights the limitations of this partitioning approach, making it impractical for fairly distributing the network between two entities or organizations.
 
 ---
 
