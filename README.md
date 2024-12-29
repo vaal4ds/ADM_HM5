@@ -101,7 +101,7 @@ Analyzing the flight network to detect communities using the **Louvain method**,
 ---
 
 ### **Bonus Question - Connected Components on MapReduce**
-  
+This PySpark script identifies connected components in a flight network using the MapReduce paradigm. It filters flights within a specified date range, creates an adjacency list of airport connections, and initializes labels for each airport. The labels are then propagated iteratively using MapReduce, where the minimum label is chosen for each connected pair of airports. After 10 iterations, connected components are grouped, and the number of components, their sizes, and the largest component are computed. Execution time is measured. To compare, GraphFrames’ `connectedComponents()` function can be used to find the same components, offering potentially better performance due to optimized graph algorithms.
 
 ---
 
